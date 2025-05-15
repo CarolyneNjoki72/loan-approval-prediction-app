@@ -13,3 +13,7 @@ with st.expander('Data'):
   st.write('**X**')
   X = df.drop('Loan_Status', axis=1)
   X
+  
+  st.write('**X**')
+  X = X.drop('Unnamed:0', axis=1)
+  X
