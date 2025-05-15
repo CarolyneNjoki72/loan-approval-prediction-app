@@ -1,9 +1,6 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+# 📦 Loan approval prediction app
 
-Description of the app ...
+This is a loan approval prediction app.
 
 ## Demo App
 
