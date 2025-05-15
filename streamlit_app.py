@@ -19,4 +19,4 @@ with st.expander('Data'):
   st.write('**y**')
   y = df.Loan_Status
   y
-func.clear()
+st.cache_resource.clear()
