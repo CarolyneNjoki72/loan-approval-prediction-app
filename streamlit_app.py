@@ -33,7 +33,7 @@ with st.sidebar:
   Education = st.selectbox('What is your highest education level?',('Graduate', 'Not Graduate')) 
   Self_Employed = st.selectbox('Are you self employed?', ('Yes', 'No'))
   ApplicantIncome = st.slider('How much is your income?', 150, 81000, 5403)
-  CoappliantIncome = st.slider('How much does your coappliant earn?', 0, 41667, 1621.25)
+  CoappliantIncome = st.slider('How much does your coappliant earn?', 0, 41667, 1621)
   LoanAmount = st.slider('How much are you applying?', 9, 700, 146)
   Loan_Amount_Term = st.slider('How long do you want to repay the loan?', 12, 480, 342)
   Credit_History = st.selectbox('Do you have some credit history?', 1, 0)
