@@ -26,7 +26,7 @@ with st.expander('Data Visualization'):
 #Data preparation
 with st.sidebar:
   st.header('Input features')
-  #Gender,Married,Dependents,Education,Self_Employed,ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term,Credit_History,Property_Area,Loan_Status
+ 
   Gender = st.selectbox('What is your gender?',('Female', 'Male'))
   Married = st.selectbox('Are you married?', ('Yes', 'No'))
   Dependents = st.selectbox('How many dependents do you have?', ('1', '2', '3+'))
