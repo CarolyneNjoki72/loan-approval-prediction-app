@@ -15,3 +15,7 @@ with st.expander('Data'):
   X
   
   st.dataframe(df, hide_index=True)
+
+  st.write('**y**')
+  y = df.Loan_Status
+  y
