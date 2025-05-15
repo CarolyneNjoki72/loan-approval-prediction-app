@@ -20,7 +20,7 @@ with st.expander('Data'):
   y = df.Loan_Status
   y
 
-  @st.cache(persist=True)
+  @st.cache_data(persist=True)
   def load():
     data = X
     label= LabelEncoder()
