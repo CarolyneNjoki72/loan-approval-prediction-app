@@ -6,6 +6,23 @@ st.title('🎈 Loan Approval Prediction App')
 st.info('This is an app built to predict loan approvals.')
 
 with st.expander('Data'):
+  st.write('**Raw data**')
+  df = pd.read_csv('https://raw.githubusercontent.com/CarolyneNjoki72/Loan-Prediction-Model/refs/heads/main/loan_prediction_cleancopy.csv')
+  df
+
+  st.write('**X**')
+  X = df.drop('Loan_Status', axis=1)
+  X
+  
+  st.dataframe(df, hide_index=True)
+
+  st.write('**y**')
+  y = df.Loan_Status
+  y
+
+with st.expander('Data Visualization'):
+  st.scatter_chart(data=df, x='ApplicantIncome', y='LoanAmount', color='Loan_Status')
+  
 #Data preparation
 with st.sidebar:
   st.header('Input features')
