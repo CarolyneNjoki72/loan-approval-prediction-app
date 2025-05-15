@@ -11,5 +11,5 @@ with st.expander('Data'):
   df
 
   st.write('**X**')
-  X = df.drop.('Loan_Status', axis=1)
+  X = df.drop('Loan_Status', axis=1)
   X
