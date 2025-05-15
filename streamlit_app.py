@@ -20,12 +20,6 @@ with st.expander('Data'):
   y = df.Loan_Status
   y
 
-  @st.cache_data(persist=True)
-  def load():
-    data = X
-    label= LabelEncoder()
-    for i in data.columns:
-      data[i] = label.fit_transform(data[i])
-      return data
-  X = load()
+with st.expander('Data visualization'):
+  st.scatter_chart(data=df, x='ApplicantIncome', y='CoapplicantIncome', color='LoanStatus')
   
