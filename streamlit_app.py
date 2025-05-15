@@ -19,3 +19,13 @@ with st.expander('Data'):
   st.write('**y**')
   y = df.Loan_Status
   y
+
+  @st.cache(persist=True)
+  def load():
+    data = X
+    label= LabelEncoder()
+    for i in data.columns:
+      data[i] = label.fit_transform(data[i])
+  return data
+  X = load()
+  
