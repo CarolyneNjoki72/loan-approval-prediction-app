@@ -20,6 +20,3 @@ with st.expander('Data'):
   y = df.Loan_Status
   y
 
-with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='ApplicantIncome', y='LoanAmount', color='LoanStatus')
-  
