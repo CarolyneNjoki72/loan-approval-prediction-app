@@ -49,7 +49,7 @@ with st.sidebar:
           'LoanAmount': LoanAmount, 
           'Loan_Amount_Term': Loan_Amount_Term, 
           'Credit_History': Credit_History}
-  input_df = pd.DataFrame.(data, index=[0])
+  input_df = pd.DataFrame(data, index=[0])
   input_loans = pd.concat([input_df, X], axis = 0)
 
 input_df
