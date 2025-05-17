@@ -24,5 +24,5 @@ with st.expander('Data'):
 
 
 with st.expander('Data Visualization'):
-st.scatter_chart(data=df, x='ApplicantIncome', y='LoanAmount', color='Loan_Status')
+  st.scatter_chart(data=df, x='ApplicantIncome', y='LoanAmount', color='Loan_Status')
   
