@@ -60,12 +60,12 @@ df_loans = pd.get_dummies(input_loans, prefix=encode)
 input_row = df_loans[:1]
 
 with st.expander('Input features'):
-st.write('**Input loans**')
-input_df
-st.write('**Combined loans data**')
-input_loans
-st.write('**Encoded input loans**')
-input_row
+  st.write('**Input loans**')
+  input_df
+  st.write('**Combined loans data**')
+  input_loans
+  st.write('**Encoded input loans**')
+  input_row
 
 
 
