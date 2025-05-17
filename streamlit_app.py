@@ -45,7 +45,7 @@ with st.sidebar:
           'Education': Education, 
           'Self_Employed': Self_Employed,
           'ApplicantIncome': ApplicantIncome,
-          'CoappliantIncome': CoapplicantIncome,
+          'CoapplicantIncome': CoapplicantIncome,
           'LoanAmount': LoanAmount, 
           'Loan_Amount_Term': Loan_Amount_Term, 
           'Credit_History': Credit_History}
