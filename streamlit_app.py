@@ -16,5 +16,5 @@ with st.expander('Data'):
   X = df.drop('Loan_Status', axis=1)
   X
 
-  
+  st.dataframe(X, hide_index=True)
   
