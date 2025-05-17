@@ -39,18 +39,7 @@ with st.sidebar:
   Credit_History = st.selectbox('Do you have some credit history?', 1, 0)
   Property_Area = st.selectbox('Select an appropriate term where your property sits.', ('Urban','Rural', 'Semiurban')
 
-  # Create a dataframe for the input features
-  data = {'Gender': Gender,
-          'Married': Married,
-          'Dependents': Dependents, 
-          'Education': Education, 
-          'Self_Employed': Self_Employed,
-          'ApplicantIncome': ApplicantIncome,
-          'CoapplicantIncome': CoapplicantIncome,
-          'LoanAmount': LoanAmount, 
-          'Loan_Amount_Term': Loan_Amount_Term, 
-          'Credit_History': Credit_History
-          'Property_Area': Property_Area}
+ st.cache_resource.clear()
   
 
 
