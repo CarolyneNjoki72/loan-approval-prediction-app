@@ -59,7 +59,7 @@ input_df = pd.DataFrame(data, index=[0])
 input_loans = pd.concat([input_df, X], axis=0)
 
 with st.expander('Input features'):
-st.write('**Input loans**')
-input_df
-st.write('**Combined loans data**')
-input_loans
+  st.write('**Input loans**')
+  input_df
+  st.write('**Combined loans data**')
+  input_loans
