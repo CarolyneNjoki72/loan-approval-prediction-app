@@ -10,8 +10,11 @@ with st.expander('Data'):
   df = pd.read_csv('https://raw.githubusercontent.com/CarolyneNjoki72/Loan-Prediction-Model/refs/heads/main/loan_prediction_cleancopy.csv')
   df
   
-st.dataframe(df, hide_index=True)
+  st.dataframe(df, hide_index=True)
 
+  st.write('**X**')
+  X = df.drop('Loan_Status', axis=1)
+  X
 
   
   
