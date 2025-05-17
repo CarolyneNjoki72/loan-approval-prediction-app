@@ -39,7 +39,7 @@ with st.sidebar:
   Credit_History = st.selectbox('Do you have some credit history?', 1, 0)
   Property_Area = st.selectbox('Select an appropriate term where your property sits.', ('Urban','Rural', 'Semiurban'))
 
-st.cache_resource.clear()
+
   
 
 
