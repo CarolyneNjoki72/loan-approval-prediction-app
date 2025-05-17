@@ -37,7 +37,7 @@ with st.sidebar:
   LoanAmount = st.slider('How much are you applying?', 9, 700, 146)
   Loan_Amount_Term = st.slider('How long do you want to repay the loan(in months)?', 12, 480, 342)
   Credit_History = st.selectbox('Do you have some credit history?', 1, 0)
-  Property_Area = st.selectbox('Select an appropriate term where your property sits.', ('Urban','Rural', 'Semiurban')
+  Property_Area = st.selectbox('Select an appropriate term where your property sits.', ('Urban','Rural', 'Semiurban'))
 
 st.cache_resource.clear()
   
