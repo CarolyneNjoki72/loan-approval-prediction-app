@@ -64,7 +64,8 @@ with st.expander('Input features'):
   input_df
   st.write('**Combined loans data**')
   input_loans
-  
+  st.write('**Encoded input loans**')
+  input_row
 
 
 
