@@ -52,7 +52,14 @@ with st.sidebar:
   input_df = pd.DataFrame(data, index=[0])
   input_loans = pd.concat([input_df, X], axis = 0)
 
-input_df
+with st.expander('Input features')
+  st.write('**Input loan**')
+  input_df
+  st.write('**Combined loan data**')
+  input_loans
+
+
+
 
 
 
