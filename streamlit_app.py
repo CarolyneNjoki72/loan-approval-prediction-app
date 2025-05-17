@@ -51,7 +51,10 @@ with st.sidebar:
           'Loan_Amount_Term': Loan_Amount_Term,
           'Credit_History': Credit_History,
           'Property_Area': Property_Area}
+  input_df = pd.DataFrame(data, index=[0])
+  input_loans = pd.concat([input_df, X], axis=0)
 
+  
 
   
 
