@@ -53,5 +53,8 @@ with st.sidebar:
   input_loans = pd.concat([input_df, X], axis = 0)
 
 input_df
+
+
+st.cache_resource.clear()
   
   
