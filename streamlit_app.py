@@ -37,5 +37,21 @@ with st.sidebar:
   LoanAmount = st.slider('How much are you applying?', 9, 700, 146)
   Loan_Amount_Term = st.slider('How long do you want to repay the loan(in months)?', 12, 480, 342)
   Credit_History = st.selectbox('Do you have some credit history?', 1, 0)
+
+  # Create a dataframe for the input features
+  data = {'Gender': Gender,
+          'Married': Married,
+          'Dependents': Dependents, 
+          'Education': Education, 
+          'Self_Employed': Self_Employed,
+          'ApplicantIncome': ApplicantIncome,
+          'CoappliantIncome': CoapplicantIncome,
+          'LoanAmount': LoanAmount, 
+          'Loan_Amount_Term': Loan_Amount_Term, 
+          'Credit_History': Credit_History}
+  input_df = pd.DataFrame.data, index=[0])
+  input_loans = pd.concat([input_df, X], axis = 0)
+
+input_df
   
   
