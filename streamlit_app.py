@@ -57,9 +57,16 @@ with st.sidebar:
 # Encode
 encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
 df_loans = pd.get_dummies(input_loans, prefix=encode)
-df_loans
+input_row = df_loans[:1]
 
-st.cache_resource.clear()
+with st.expander('Input features'):
+st.write('**Input loans**')
+input_df
+st.write('**Combined loans data**')
+input_loans
+st.write('**Encoded input loans**')
+input_row
+
 
 
 
