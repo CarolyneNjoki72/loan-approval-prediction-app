@@ -50,7 +50,7 @@ with st.sidebar:
           'LoanAmount': LoanAmount,
           'Loan_Amount_Term': Loan_Amount_Term,
           'Credit_History': Credit_History
-          'Property_Area': Property_Area
+          'Property_Area': Property_Area}
 
 
   
