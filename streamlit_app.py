@@ -21,5 +21,7 @@ with st.expander('Data'):
   st.write('**y**')
   y = df.Loan_Status
   y
-  
+
+with st.expander('Data Visualization'):
+st.scatter_chart(data=df, x='ApplicantIncome', y='LoanAmount', color='Loan_Status')
   
