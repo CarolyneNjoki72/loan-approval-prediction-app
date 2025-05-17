@@ -10,7 +10,6 @@ with st.expander('Data'):
   df = pd.read_csv('https://raw.githubusercontent.com/CarolyneNjoki72/Loan-Prediction-Model/refs/heads/main/loan_prediction_cleancopy.csv')
   df
 
- st.cache_resource.clear()
 
   
   
