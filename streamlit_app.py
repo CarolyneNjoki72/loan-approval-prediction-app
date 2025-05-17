@@ -14,7 +14,7 @@ with st.expander('Data'):
   X = df.drop('Loan_Status', axis=1)
   X
   
-  st.dataframe(df, hide_index=True)
+  st.dataframe(X, hide_index=True)
 
   st.write('**y**')
   y = df.Loan_Status
@@ -65,7 +65,6 @@ with st.expander('Input features'):
   input_df
   st.write('**Combined loans data**')
   input_loans
-with st.expander('Encoded features'):
   st.write('**Encoded input loans**')
   input_rows
 
