@@ -57,6 +57,48 @@ data = {'Gender': Gender,
 
 input_df = pd.DataFrame(data, index=[0])
 
+# Clean & align '3+' in Dependents
+input_df['Dependents'] = input_df['Dependents'].replace('3+', '3')
+X['Dependents'] = X['Dependents'].replace('3+', '3')
+
+input_loans = pd.concat([input_df, X], axis=0)
+
+
+with st.expander('Input features'):
+  st.write('**Input loans**')
+  input_df
+  st.write('**Combined loans data**')
+  input_loans
+  
+# Data preparation
+# Encode X
+encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
+df_loans = pd.get_dummies(input_loans, prefix=encode)
+df_loans = df_loans.reindex(columns=pd.get_dummies(X, prefix=encode).columns, fill_value=0)
+X_new = df_loans[1:]
+input_encoded = df_loans[:1]
+
+#Encode Y
+target_mapper = {'Y':1 , 
+                  'N':0}
+  
+y_new = y.map(target_mapper)
+
+
+with st.expander('Data preparation'):
+  st.write('**Encoded X (input loans)**')
+  input_encoded
+  st.write('**Encoded**')
+  y_new
+
+# Model training 
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model.fit(X_new, y_new)
+
+# Apply model to make predictions 
+y_pred = model.predict(input_encoded)
+
 
 
 
