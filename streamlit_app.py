@@ -81,10 +81,8 @@ input_encoded = df_loans[:1]
 #Encode Y
 target_mapper = {'Y':1 , 
                   'N':0}
-def target_encoded(value):
-  return target_mapper[value]
   
-y_new = y.apply(target_encoded)
+y_new = y.map(target_mapper)
 
 
 with st.expander('Data preparation'):
