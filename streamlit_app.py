@@ -39,7 +39,7 @@ with st.sidebar:
   CoapplicantIncome = st.slider('How much does your coapplicant earn?', 0, 41667, 1621)
   LoanAmount = st.slider('How much are you applying?', 9, 700, 146)
   Loan_Amount_Term = st.slider('How long do you want to repay the loan(in months)?', 12, 480, 342)
-  Credit_History = st.selectbox('Do you have some credit history?', 1, 0)
+  Credit_History = st.selectbox('Do you have some credit history?', (1, 0))
   Property_Area = st.selectbox('Select an appropriate term where your property sits.', ('Urban','Rural', 'Semiurban'))
 
 # Create a dataframe for the input features
@@ -65,8 +65,9 @@ with st.expander('Input features'):
   input_loans
 
 # Encode
-encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
 df_loans = pd.get_dummies(input_loans, prefix=encode)
-df_loan[:1]
+df_loans = df_loans.reindex(columns=pd.get_dummies(X, prefix=encode).columns, fill_value=0)
+input_encoded = df_loans[:1]
+
 
 
