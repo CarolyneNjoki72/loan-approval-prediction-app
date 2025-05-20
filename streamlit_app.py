@@ -104,7 +104,13 @@ model.fit(X_new, y_new)
 y_pred = model.predict(input_encoded)
 prediction_proba = model.predict_proba(input_encoded)
 
-prediction_proba
+df_prediction_proba = pd.DataFrame(prediction_proba)
+df_prediction_proba.columns = ['Y', 'N']
+df_prediction_proba.rename(columns= {1:'Y', 
+                                  0:'N'})
+df_prediction_proba
+
+                            
 
 
 
