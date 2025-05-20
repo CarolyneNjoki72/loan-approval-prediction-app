@@ -58,6 +58,13 @@ data = {'Gender': Gender,
 input_df = pd.DataFrame(data, index=[0])
 input_loans = pd.concat([input_df, X], axis=0)
 
+with st.expander('Input features'):
+  st.write('**Input loans**')
+  input_df
+  st.write('**Combined loans data**')
+  input_loans
+  
+# Data preparation
 # Encode X
 encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
 df_loans = pd.get_dummies(input_loans, prefix=encode)
@@ -71,15 +78,13 @@ def target_encoded(value):
   return target_mapper[value]
   
 y_new = y.apply(target_encoded)
-y_new
 
-with st.expander('Input features'):
-  st.write('**Input loans**')
-  input_df
-  st.write('**Combined loans data**')
-  input_loans
-  st.write('**Encoded input loans**')
+
+with st.expander('Data preparation'):
+  st.write('**Encoded X (input loans)**')
   input_encoded
+  st.write('**Encoded**')
+  y_new
 
 
 
