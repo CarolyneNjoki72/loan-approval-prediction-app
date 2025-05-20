@@ -91,13 +91,6 @@ with st.expander('Data preparation'):
   st.write('**Encoded**')
   y_new
 
-# Model training 
-from sklearn.linear_model import LogisticRegression
-model = LogisticRegression()
-model.fit(X_new, y_new)
-
-# Apply model to make predictions 
-y_pred = model.predict(input_encoded)
 
 st.cache_resource.clear()
 
