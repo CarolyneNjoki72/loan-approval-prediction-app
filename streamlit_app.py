@@ -69,7 +69,9 @@ target_mapper = {'Y':1 ,
                   'N':0}
 def target_encoded(value):
   return target_mapper[value]
-
+  
+y_new = y.apply(target_encode)
+y_new
 
 with st.expander('Input features'):
   st.write('**Input loans**')
