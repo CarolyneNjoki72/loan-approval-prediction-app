@@ -69,6 +69,7 @@ with st.expander('Input features'):
 encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
 df_loans = pd.get_dummies(input_loans, prefix=encode)
 df_loans = df_loans.reindex(columns=pd.get_dummies(X, prefix=encode).columns, fill_value=0)
+X_new = df_loans[1:]
 input_encoded = df_loans[:1]
 
 #Encode Y
@@ -85,6 +86,17 @@ with st.expander('Data preparation'):
   input_encoded
   st.write('**Encoded**')
   y_new
+
+# Model training 
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model.fit(X_new, y_new)
+
+# Apply model to make predictions 
+y_pred = model.predict(input_encoded)
+prediction_proba = model.predict_proba(input_encoded)
+
+prediction_proba
 
 
 
