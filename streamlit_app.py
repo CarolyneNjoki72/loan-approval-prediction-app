@@ -110,7 +110,22 @@ df_prediction_proba = pd.DataFrame(prediction_proba, columns=['N', 'Y'])  # 0 = 
 
 # Display predicted loan statuses
 st.subheader('Prediction Probabilities')
-st.dataframe(df_prediction_proba, hide_index=True)
+st.dataframe(df_prediction_proba, column_config={
+                                    'N': st.column_config.ProgressColumn(
+                                      'N',
+                                      format='%f',
+                                      width='medium',
+                                      min_value=0,
+                                      max_value=1
+                                    ),
+                                    'Y': st.column_config.ProgressColumn(
+                                      'Y',
+                                      format='%f',
+                                      width='medium',
+                                      min_value=0,
+                                      max_value=1
+                                    ),
+                                   },hide_index=True)
 
 # Final predicted label
 loan_status = np.array(['N', 'Y'])  # 0 = N, 1 = Y
