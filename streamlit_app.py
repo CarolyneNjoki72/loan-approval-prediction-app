@@ -113,14 +113,14 @@ st.subheader('Prediction Probabilities')
 st.dataframe(df_prediction_proba, column_config={
                                     'N': st.column_config.ProgressColumn(
                                       'N',
-                                      format='%f',
+                                      format='%.2f',
                                       width='medium',
                                       min_value=0,
                                       max_value=1
                                     ),
                                     'Y': st.column_config.ProgressColumn(
                                       'Y',
-                                      format='%f',
+                                      format='%.2f',
                                       width='medium',
                                       min_value=0,
                                       max_value=1
