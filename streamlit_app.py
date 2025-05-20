@@ -104,16 +104,17 @@ model.fit(X_new, y_new)
 y_pred = model.predict(input_encoded)
 prediction_proba = model.predict_proba(input_encoded)
 
-df_prediction_proba = pd.DataFrame(prediction_proba)
-df_prediction_proba.columns = ['Y', 'N']
-df_prediction_proba.rename(columns={0: 'N', 1: 'Y'}, inplace=True)
+# Show prediction probabilities
+df_prediction_proba = pd.DataFrame(prediction_proba, columns=['N', 'Y'])  # 0 = N, 1 = Y
 
 # Display predicted loan statuses
-st.subheader('Predicted Probabilities')
-df_prediction_proba
+st.subheader('Prediction Probabilities')
+st.dataframe(df_prediction_proba, hide_index=True)
 
-loan_status = np.array(['N', 'Y'])
-st.success(str(loan_status[y_pred][0]))
+# Final predicted label
+loan_status = np.array(['N', 'Y'])  # 0 = N, 1 = Y
+st.success(f"🎯 Predicted Loan Status: **{loan_status[y_pred[0]]}**")
+
 
 
 
