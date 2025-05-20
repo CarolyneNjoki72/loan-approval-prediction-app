@@ -106,15 +106,13 @@ prediction_proba = model.predict_proba(input_encoded)
 
 df_prediction_proba = pd.DataFrame(prediction_proba)
 df_prediction_proba.columns = ['Y', 'N']
-df_prediction_proba.rename(columns= {1:'Y', 
-                                  0:'N'})
-
+df_prediction_proba.rename(columns={0: 'N', 1: 'Y'}, inplace=True)
 
 # Display predicted loan statuses
-st.subheader('Predicted Loan Results')
+st.subheader('Predicted Probabilities')
 df_prediction_proba
 
-loan_status = np.array(['Y', 'N'])
+loan_status = np.array(['N', 'Y'])
 st.success(str(loan_status[y_pred][0]))
 
 
