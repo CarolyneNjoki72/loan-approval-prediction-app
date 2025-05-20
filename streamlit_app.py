@@ -92,7 +92,7 @@ with st.expander('Data preparation'):
   y_new
 
 
-st.cache_resource.clear()
+
 
 
 
