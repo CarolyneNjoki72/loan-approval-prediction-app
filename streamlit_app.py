@@ -57,7 +57,7 @@ data = {'Gender': Gender,
 
 input_df = pd.DataFrame(data, index=[0])
 
-st.cache_resource.clear()
+
 
 
 
