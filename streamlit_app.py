@@ -73,8 +73,12 @@ with st.expander('Input features'):
 # Data preparation
 # Encode X
 encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
-df_loans = pd.get_dummies(input_loans, prefix=encode)
+df_loans = pd.get_dummies(input_loans, columns= encode, prefix=encode)
 df_loans = df_loans.reindex(columns=pd.get_dummies(X, prefix=encode).columns, fill_value=0)
+
+# Fill Nans
+df_loans = df_loans.fillna(0)
+
 X_new = df_loans[1:]
 input_encoded = df_loans[:1]
 
@@ -98,7 +102,9 @@ model.fit(X_new, y_new)
 
 # Apply model to make predictions 
 y_pred = model.predict(input_encoded)
+prediction_proba = model.predict_proba(input_encoded)
 
+prediction_proba
 
 
 
