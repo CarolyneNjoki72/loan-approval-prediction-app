@@ -65,6 +65,7 @@ with st.expander('Input features'):
   input_loans
 
 # Encode
+encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
 df_loans = pd.get_dummies(input_loans, prefix=encode)
 df_loans = df_loans.reindex(columns=pd.get_dummies(X, prefix=encode).columns, fill_value=0)
 input_encoded = df_loans[:1]
