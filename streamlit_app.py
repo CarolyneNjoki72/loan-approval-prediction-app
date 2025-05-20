@@ -64,6 +64,9 @@ with st.expander('Input features'):
   st.write('**Combined loans data**')
   input_loans
 
-
+# Encode
+encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
+df_loans = pd.get_dummies(input_loans, prefix=encode)
+df_loan[:1]
 
 
