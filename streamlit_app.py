@@ -99,7 +99,7 @@ model.fit(X_new, y_new)
 # Apply model to make predictions 
 y_pred = model.predict(input_encoded)
 
-
+st.cache_resource.clear()
 
 
 
