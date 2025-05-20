@@ -70,7 +70,7 @@ target_mapper = {'Y':1 ,
 def target_encoded(value):
   return target_mapper[value]
   
-y_new = y.apply(target_encode)
+y_new = y.apply(target_encoded)
 y_new
 
 with st.expander('Input features'):
