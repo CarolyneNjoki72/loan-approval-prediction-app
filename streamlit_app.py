@@ -56,7 +56,13 @@ data = {'Gender': Gender,
         'Property_Area': Property_Area}
 
 input_df = pd.DataFrame(data, index=[0])
+
+# Clean & align '3+' in Dependents
+input_df['Dependents'] = input_df['Dependents'].replace('3+', '3')
+X['Dependents'] = X['Dependents'].replace('3+', '3')
+
 input_loans = pd.concat([input_df, X], axis=0)
+
 
 with st.expander('Input features'):
   st.write('**Input loans**')
